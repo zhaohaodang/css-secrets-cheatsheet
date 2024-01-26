@@ -1,0 +1,42 @@
+默认情况下， 元素的背景会延伸到元素边框所在的区域下层。这一点很容易验证，给一个有背景的元素加一道的虚线边框，就可以看出来
+
+```
+width: 200px;
+height: 200px;
+border: 10px dashed hsla(0, 0%, 100%, 0.5);
+background: green;
+```
+
+<div
+  style={{
+    width: "200px",
+    height: "200px",
+    border: "10px dashed hsla(0, 0%, 100%, 0.5)",
+    background: "green",
+  }}
+></div>
+
+<br />
+`background-clip` 属性来调整上述默认行为。这个属性的初始值是 `border-box`，意思就是背景会被
+*边框的外沿框* 裁切掉。
+
+如果不希望背景侵入边框所在的范围，我们要做的就是把它的值设为 `padding-box`，这样浏览器就会用 _内边距的外沿_ 来把背
+景裁切掉。
+
+```
+width: 200px;
+height: 200px;
+border: 10px dashed yellowgreen;
+background: green;
+background-clip: padding-box;
+```
+
+<div
+  style={{
+    width: "200px",
+    height: "200px",
+    border: "10px dashed yellowgreen",
+    background: "green",
+    backgroundClip: "padding-box",
+  }}
+></div>

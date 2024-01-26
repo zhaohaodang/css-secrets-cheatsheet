@@ -1,0 +1,65 @@
+`box-shadow`属性可以制造投影，一个正值的扩张半径（第四个参数），加上两个为零的偏移量（第一和第二个参数）以及为零的模糊值（第三个参数），得到的“投影”其实就像一道实线边框。
+
+```
+width: 200px
+height: 200px
+background: yellowgreen;
+box-shadow: 0 0 0 10px black;
+```
+
+<br />
+<div
+  style={{
+    width: "200px",
+    height: "200px",
+    background: "yellowgreen",
+    boxShadow: "0 0 0 10px black",
+  }}
+></div>
+<br />
+
+`box-shadow`支持逗号分隔语法，可以创建任意数量的投影。我们给上面的元素再加上一道
+deeppink 颜色的“边框”。
+
+```
+width: 200px;
+height: 200px;
+background: yellowgreen;
+box-shadow: 0 0 0 10px black, 0 0 0 15px deeppink;
+```
+
+<br />
+<div
+  style={{
+    width: "200px",
+    height: "200px",
+    background: "yellowgreen",
+    boxShadow: "0 0 0 10px black, 0 0 0 15px deeppink",
+  }}
+></div>
+<br />
+
+box-shadow 是层层叠加的，后加的阴影在下面一层。所以在视觉上，深粉色的只有 5px 的宽。
+如果把深粉色投影的扩张半径改为 10px（和第一个黑色投影一样），深粉色投影将被黑色盖住，不会显示出来。
+
+border 配合 outline 可以实现一个简单的缝线效果
+
+```
+width: 200px;
+height: 200px;
+background: yellowgreen;
+border: 3px dashed #655;
+outline: 10px solid yellowgreen;
+```
+
+<br/>
+<div style={{
+    width:'200px',
+height:'200px',
+background:'yellowgreen',
+border:'3px dashed #655',
+outline:'10px solid yellowgreen',
+
+}}></div>
+
+<br />
