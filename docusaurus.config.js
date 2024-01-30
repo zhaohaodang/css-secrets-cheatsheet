@@ -8,20 +8,22 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
+  title: "CSS揭秘备忘录",
   tagline: "Dinosaurs are cool",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://zhaohaodang.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/css-secrets-cheatsheet",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
+  organizationName: "zhaohaodang", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
+
+  trailingSlash: false,
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -30,8 +32,8 @@ const config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: "zh-Hans",
+    locales: ["zh-Hans"],
   },
 
   presets: [
@@ -40,18 +42,19 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: "/",
           sidebarPath: "./sidebars.js",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/zhaohaodang/css-secrets-cheatsheet/tree/master",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/zhaohaodang/css-secrets-cheatsheet/tree/master",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -66,21 +69,21 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "My Site",
+        title: "CSS揭秘备忘录",
         logo: {
-          alt: "My Site Logo",
+          alt: "首页",
           src: "img/logo.svg",
         },
         items: [
+          // {
+          //   type: "docSidebar",
+          //   sidebarId: "tutorialSidebar",
+          //   position: "left",
+          //   label: "Tutorial",
+          // },
+          // { to: "/blog", label: "Blog", position: "left" },
           {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "Tutorial",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/zhaohaodang/css-secrets-cheatsheet",
             label: "GitHub",
             position: "right",
           },
@@ -88,48 +91,48 @@ const config = {
       },
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        // links: [
+        //   {
+        //     title: "Docs",
+        //     items: [
+        //       {
+        //         label: "Tutorial",
+        //         to: "/docs/intro",
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: "Community",
+        //     items: [
+        //       {
+        //         label: "Stack Overflow",
+        //         href: "https://stackoverflow.com/questions/tagged/docusaurus",
+        //       },
+        //       {
+        //         label: "Discord",
+        //         href: "https://discordapp.com/invite/docusaurus",
+        //       },
+        //       {
+        //         label: "Twitter",
+        //         href: "https://twitter.com/docusaurus",
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: "More",
+        //     items: [
+        //       {
+        //         label: "Blog",
+        //         to: "/blog",
+        //       },
+        //       {
+        //         label: "GitHub",
+        //         href: "https://github.com/facebook/docusaurus",
+        //       },
+        //     ],
+        //   },
+        // ],
+        copyright: `Copyright © ${new Date().getFullYear()} Zhaohaodang. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
