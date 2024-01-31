@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcss_secrets_cheatsheet=self.webpackChunkcss_secrets_cheatsheet||[]).push([[870],{9269:e=>{e.exports=JSON.parse('{"label":"facebook","permalink":"/css-secrets-cheatsheet/blog/tags/facebook","allTagsPath":"/css-secrets-cheatsheet/blog/tags","count":1,"unlisted":false}')}}]);

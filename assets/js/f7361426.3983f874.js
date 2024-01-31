@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcss_secrets_cheatsheet=self.webpackChunkcss_secrets_cheatsheet||[]).push([[386],{550:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/css-secrets-cheatsheet/blog/tags/docusaurus","allTagsPath":"/css-secrets-cheatsheet/blog/tags","count":4,"unlisted":false}')}}]);
