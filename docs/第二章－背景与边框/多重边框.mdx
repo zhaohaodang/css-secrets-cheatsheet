@@ -3,62 +3,61 @@
 ```
 width: 200px
 height: 200px
-background: yellowgreen;
-box-shadow: 0 0 0 10px black;
+background: darkgreen;
+box-shadow: 0 0 0 10px darkorange;
 ```
 
 <br />
 <div
   style={{
-    width: "200px",
-    height: "200px",
-    background: "yellowgreen",
-    boxShadow: "0 0 0 10px black",
+    width: 200,
+    height: 200,
+    background: "darkgreen",
+    boxShadow: "0 0 0 10px darkorange",
   }}
 ></div>
 <br />
 
-`box-shadow`支持逗号分隔语法，可以创建任意数量的投影。我们给上面的元素再加上一道
-deeppink 颜色的“边框”。
+`box-shadow`支持逗号分隔语法，可以创建任意数量的投影。我们给上面的元素再加上一道实木色的“边框”。
 
 ```
 width: 200px;
 height: 200px;
-background: yellowgreen;
-box-shadow: 0 0 0 10px black, 0 0 0 15px deeppink;
+background: darkgreen;
+box-shadow: 0 0 0 10px darkorange, 0 0 0 15px burlywood;
 ```
 
 <br />
 <div
   style={{
-    width: "200px",
-    height: "200px",
-    background: "yellowgreen",
-    boxShadow: "0 0 0 10px black, 0 0 0 15px deeppink",
+    width: 200,
+    height: 200,
+    background: "darkgreen",
+    boxShadow: "0 0 0 10px darkorange, 0 0 0 15px burlywood",
   }}
 ></div>
 <br />
 
-box-shadow 是层层叠加的，后加的阴影在下面一层。所以在视觉上，深粉色的只有 5px 的宽。
-如果把深粉色投影的扩张半径改为 10px（和第一个黑色投影一样），深粉色投影将被黑色盖住，不会显示出来。
+`box-shadow` 是层层叠加的，后加的阴影会被前面的盖住，所以在视觉上，实木色只有 5px 的宽。
+如果把实木色投影的扩张半径改为 10px（和第一个深橘色的阴影宽度一样），实木色投影将被深橘色盖住，不会显示出来。
 
-border 配合 outline 可以实现一个简单的缝线效果
+`border` 配合 `outline` 也可以实现两个边框。将边框样式设置为虚线，外边框的颜色和元素的背景色保持一致，可以实现一个简单的缝线效果：
 
 ```
 width: 200px;
 height: 200px;
-background: yellowgreen;
-border: 3px dashed #655;
-outline: 10px solid yellowgreen;
+background: darkgreen;
+border: 3px dashed darkorange;
+outline: 10px solid darkgreen;
 ```
 
 <br/>
 <div style={{
     width:'200px',
 height:'200px',
-background:'yellowgreen',
-border:'3px dashed #655',
-outline:'10px solid yellowgreen',
+background:'darkgreen',
+border:'3px dashed darkorange',
+outline:'10px solid darkgreen',
 
 }}></div>
 

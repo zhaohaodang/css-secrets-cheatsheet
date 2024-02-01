@@ -1,1 +1,153 @@
-准备中
+```
+width: 200px;
+height: 100px;
+background: darkgreen;
+border-radius: 50%;
+```
+
+<div
+  style={{
+    width: 200,
+    height: 100,
+    background: "darkgreen",
+    borderRadius: "50%",
+  }}
+></div>
+
+核心代码只有一句 `border-radius: 50%`，但它背后的原理还是挺有意思的。
+
+我们知道，为正方形设置圆角，圆角半径为正方形边长的一半，可以画出一个圆形。
+
+```
+width: 100px;
+height: 100px;
+background: darkgreen;
+border-radius: 50px;
+```
+
+<div
+  style={{
+    width: 100,
+    height: 100,
+    background: "darkgreen",
+    borderRadius: 50,
+  }}
+></div>
+
+如果圆角半径超过了边长的一半，会发生什么呢？
+:::tip
+当任意两个相邻圆角的半径之和超过 border box 的尺寸时，用户代理必须按比例减小各个边框半径所使用的值，直到它们不会相互重叠为止。
+:::
+
+举个例子，以左上角和右上角的圆角为例，假如元素为一个正方形，边长为 120px，左上角圆角半径为 50px，右上角圆角半径为 100px。50+100=150，超过了正方形的尺寸。
+50 比 100 等于 1 比 2，左上角的圆角半径会被减少到 120px 的三分之一，即 40px。右上角的圆角半径会被减少到 120px 的三分之二，即 80px。
+
+<div
+  style={{
+    width: 120,
+    height: 120,
+    background: "darkgreen",
+    position: "relative",
+    borderTopLeftRadius: 50,
+    borderTopRightRadius: 100,
+  }}
+>
+  <small style={{
+    display:'block',
+    position:'absolute',
+    width:40,
+    height:40,
+    top:0,
+    left:0,
+    background:'darkorange',
+    opacity:0.5,
+  }}>40x40</small>
+  <small
+    style={{
+      display: "block",
+      position: "absolute",
+      width: 80,
+      height: 80,
+      top: 0,
+      right: 0,
+      background: "burlywood",
+      opacity: 0.5,
+    }}
+  >80x80</small>
+
+</div>
+如果左上角圆角半径是 100px，右上角圆角半径也是 100px，100+100=200，也超过了正方形的尺寸，他们会按照1:1的比例，分别缩短到60px
+
+
+<div
+  style={{
+    width: 120,
+    height: 120,
+    background: "darkgreen",
+    position: "relative",
+    borderTopLeftRadius: 100,
+    borderTopRightRadius: 100,
+  }}
+>
+  <small style={{
+    display:'block',
+    position:'absolute',
+    width:60,
+    height:60,
+    top:0,
+    left:0,
+    background:'darkorange',
+    opacity:0.5,
+  }}>60x60</small>
+  <small
+    style={{
+      display: "block",
+      position: "absolute",
+      width: 60,
+      height: 60,
+      top: 0,
+      right: 0,
+      background: "burlywood",
+      opacity: 0.5,
+    }}
+  >60x60</small>
+
+</div>
+
+`border-radius` 可以分别指定水平和垂直方向的半径，只要用一个斜杠 / 分隔这两个值就可以了。使用这个特性可以画出一个椭圆圆角。
+
+```
+width: 100px;
+height: 100px;
+background: darkgreen;
+border-radius: 50px/25px;
+```
+
+<div
+  style={{
+    width: 200,
+    height: 100,
+    background: "darkgreen",
+    borderRadius: "50px/25px",
+    position: "relative",
+  }}
+>
+  <small
+    style={{
+      display: "block",
+      position: "absolute",
+      width: 50,
+      height: 25,
+      top: 0,
+      left: 0,
+      background: "burlywood",
+      opacity: 0.5,
+    }}
+  >
+    50x25
+  </small>
+</div>
+
+当然，斜杠前后的值也可以是百分比，分别对应元素的宽和高，比如 50% / 20%
+
+如果斜杠前后值相同，比如 50% / 50% ，可以简写为 50%，这就是开头说的`border-radius: 50%`，四个圆角会根据元素的宽和高，将水平半径和垂直半径，设置为宽和高的一半，这样我们就得到了一个自适应的椭圆了。
