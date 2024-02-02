@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhaohaodang.github.io/css-secrets-cheatsheet/blog</id>
-    <title>CSS揭秘备忘录 Blog</title>
+    <title>《CSS揭秘》备忘录 Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhaohaodang.github.io/css-secrets-cheatsheet/blog"/>
-    <subtitle>CSS揭秘备忘录 Blog</subtitle>
+    <subtitle>《CSS揭秘》备忘录 Blog</subtitle>
     <icon>https://zhaohaodang.github.io/css-secrets-cheatsheet/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
