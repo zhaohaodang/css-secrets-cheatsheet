@@ -8,7 +8,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "CSS揭秘备忘录",
+  title: "《CSS揭秘》备忘录",
   tagline: "Dinosaurs are cool",
   favicon: "img/favicon.ico",
 
@@ -69,7 +69,7 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "CSS揭秘备忘录",
+        title: "《CSS揭秘》备忘录",
         logo: {
           alt: "首页",
           src: "img/logo.svg",
