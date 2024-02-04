@@ -153,13 +153,23 @@ border-radius: 50px/25px;
 
 ## 半椭圆
 
-`border-radius`是个简写的属性，属性展开为：border-top-left-radius border-top-right-radius border-bottom-right-radius border-bottom-left-radius，即从左上角开始，顺时针顺序。
+CSS 中存在很多简写属性，展开之后的顺序通常是从上边或左上角开始，顺时针。
 
-扩展：CSS 中存在很多简写属性，展开之后的属性，顺序通常为从上边或左上角开始顺时针。
+被简化的不仅是属性的名字，还有属性值，以 `margin` 为例，如果上下外边距一样，都为 10px，左右外边距也一样，都为 20px，可以简写为 `marign: 10px 20px`
 
-被简化的不仅是属性的名字，还有属性值，以 margin 为例，如果上下外边距一样，都为 10px，左右外边距也一样，都为 20px，可以简写为 marign: 10px 20px;
+如果上下边距不一样，上为 10px，下为 30px，左右外边距一样，都为 20px，可以写为 `maring: 10px 20px 30px` ，这里虽然没有显式地写明左外边距，但按规定，默认和右外边距相等，相当于 `maring: 10px 20px 30px 20px`。
 
-如果上下边距不一样，上为 10px，下为 30px，左右外边距一样，都为 20px，可以写为 maring: 10px 20px 30px;这里虽然没有显式地设置左边距，但按规定，默认和右外边距相等，相当于 maring: 10px 20px 30px 20px。
+`border-radius`也是个简写的属性，属性展开为：
+
+`border-top-left-radius`
+
+`border-top-right-radius`
+
+`border-bottom-right-radius`
+
+`border-bottom-left-radius`
+
+即从左上角开始，顺时针顺序。
 
 ```
 width: 100px;
@@ -174,5 +184,52 @@ border-radius: 10px 20px 30px 40px;
     height: 100,
     background: "darkgreen",
     borderRadius: "10px 20px 30px 40px",
+  }}
+></div>
+
+`border-radius: 10px 20px 30px 40px` 等价于
+
+`border-radius: 10px 20px 30px 40px / 10px 20px 30px 40px`。
+
+要想画一个半椭圆，可以考虑将元素左上角和左下角的圆角的水平半径都设置为元素的宽，垂直半径都设置为元素高度的一半。
+
+```
+width: 200;
+height: 100;
+background: darkgreen;
+border-top-left-radius: 100% 50%;
+border-bottom-left-radius: 100% 50%;
+```
+
+<div
+  style={{
+    width: 200,
+    height: 100,
+    background: "darkgreen",
+    borderTopLeftRadius: "100% 50%",
+    borderBottomLeftRadius: "100% 50%",
+  }}
+></div>
+:::warning
+如果用展开的属性，单独为某个圆角设置水平半径和垂直半径，比如border-top-left-radius，就不能用斜杠分隔水平半径和垂直半径，要用空格。
+:::
+
+上面的圆角设置，可以简写为`border-radius: 100% 0 0 100% / 50% 0 0 50%`，可以再简写为`border-radius: 100% 0 0 100% / 50%`
+
+## 四分之一椭圆
+
+要想画一个四分之一椭圆，可以考虑将元素左上角的水平半径设置为元素的宽，垂直半径都设置为元素的高。
+```
+width: 200;
+height: 100;
+background: darkgreen;
+border-top-left-radius: 100% 100%;
+```
+<div
+  style={{
+    width: 200,
+    height: 100,
+    background: "darkgreen",
+    borderTopLeftRadius: "100% 100%",
   }}
 ></div>
