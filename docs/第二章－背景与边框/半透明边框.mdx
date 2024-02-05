@@ -1,10 +1,12 @@
 默认情况下， 元素的背景会延伸到元素边框所在的区域下层。这一点很容易验证，给一个有背景的元素加一道的虚线边框，就可以看出来：
 
-```
-width: 200px;
-height: 200px;
-border: 10px dashed hsla(0, 0%, 100%, 0.5);
-background: darkgreen;
+```css {4}
+div {
+  width: 200px;
+  height: 200px;
+  border: 10px dashed hsla(0, 0%, 100%, 0.5);
+  background: darkgreen;
+}
 ```
 
 <div
@@ -21,12 +23,14 @@ background: darkgreen;
 
 如果不希望背景延伸到边框外沿，可以把`background-clip`的值写成 `padding-box`，这样浏览器就会用*内边距的外沿*，把背景裁切掉。
 
-```
-width: 200px;
-height: 200px;
-border: 10px dashed darkorange;
-background: darkgreen;
-background-clip: padding-box;
+```css {6}
+div {
+  width: 200px;
+  height: 200px;
+  border: 10px dashed darkorange;
+  background: darkgreen;
+  background-clip: padding-box;
+}
 ```
 
 <div

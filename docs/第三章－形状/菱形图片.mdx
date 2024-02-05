@@ -1,0 +1,35 @@
+---
+sidebar_position: 3
+---
+
+```css
+.picture {
+  width: 200px;
+  transform: rotate(45deg);
+  overflow: hidden;
+}
+.picture > img {
+  max-width: 100%;
+  transform: rotate(-45deg) scale(1.42);
+}
+```
+
+import pic from "./img/avater-samoyed.jpg";
+
+<div
+  style={{
+    fontSize: 0,
+    margin: 50,
+    width: 200,
+    transform: "rotate(45deg)",
+    overflow: "hidden",
+  }}
+>
+  <img
+    style={{
+      maxWidth: "100%",
+      transform: "rotate(-45deg) scale(1.42)",
+    }}
+    src={pic}
+  />
+</div>

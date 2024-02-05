@@ -1,8 +1,14 @@
-```
-width: 200px;
-height: 100px;
-background: darkgreen;
-border-radius: 50%;
+---
+sidebar_position: 1
+---
+
+```css {5}
+div {
+  width: 200px;
+  height: 100px;
+  background: darkgreen;
+  border-radius: 50%;
+}
 ```
 
 <div
@@ -18,11 +24,13 @@ border-radius: 50%;
 
 我们知道，为正方形设置圆角，圆角半径为正方形边长的一半，可以画出一个圆形。
 
-```
-width: 100px;
-height: 100px;
-background: darkgreen;
-border-radius: 50px;
+```css {5}
+div {
+  width: 100px;
+  height: 100px;
+  background: darkgreen;
+  border-radius: 50px;
+}
 ```
 
 <div
@@ -115,11 +123,13 @@ border-radius: 50px;
 
 `border-radius` 可以分别指定水平和垂直方向的半径，只要用一个斜杠 / 分隔这两个值就可以了。使用这个特性可以画出一个椭圆圆角。
 
-```
-width: 100px;
-height: 100px;
-background: darkgreen;
-border-radius: 50px/25px;
+```css {5}
+div {
+  width: 100px;
+  height: 100px;
+  background: darkgreen;
+  border-radius: 50px/25px;
+}
 ```
 
 <div
@@ -171,11 +181,13 @@ CSS 中存在很多简写属性，展开之后的顺序通常是从上边或左�
 
 即从左上角开始，顺时针顺序。
 
-```
-width: 100px;
-height: 100px;
-background: darkgreen;
-border-radius: 10px 20px 30px 40px;
+```css {5}
+div {
+  width: 100px;
+  height: 100px;
+  background: darkgreen;
+  border-radius: 10px 20px 30px 40px;
+}
 ```
 
 <div
@@ -193,12 +205,14 @@ border-radius: 10px 20px 30px 40px;
 
 要想画一个半椭圆，可以考虑将元素左上角和左下角的圆角的水平半径都设置为元素的宽，垂直半径都设置为元素高度的一半。
 
-```
-width: 200;
-height: 100;
-background: darkgreen;
-border-top-left-radius: 100% 50%;
-border-bottom-left-radius: 100% 50%;
+```css {5,6}
+div {
+  width: 200;
+  height: 100;
+  background: darkgreen;
+  border-top-left-radius: 100% 50%;
+  border-bottom-left-radius: 100% 50%;
+}
 ```
 
 <div
@@ -219,12 +233,16 @@ border-bottom-left-radius: 100% 50%;
 ## 四分之一椭圆
 
 要想画一个四分之一椭圆，可以考虑将元素左上角的水平半径设置为元素的宽，垂直半径都设置为元素的高。
+
+```css {5}
+div {
+  width: 200;
+  height: 100;
+  background: darkgreen;
+  border-top-left-radius: 100% 100%;
+}
 ```
-width: 200;
-height: 100;
-background: darkgreen;
-border-top-left-radius: 100% 100%;
-```
+
 <div
   style={{
     width: 200,

@@ -1,10 +1,12 @@
 `box-shadow`属性可以制造投影，一个正值的扩张半径（第四个参数），加上两个为零的偏移量（第一和第二个参数）以及为零的模糊值（第三个参数），得到的“投影”其实就像一道实线边框。
 
-```
-width: 200px
-height: 200px
-background: darkgreen;
-box-shadow: 0 0 0 10px darkorange;
+```css {5}
+div {
+  width: 200px;
+  height: 200px;
+  background: darkgreen;
+  box-shadow: 0 0 0 10px darkorange;
+}
 ```
 
 <br />
@@ -20,11 +22,13 @@ box-shadow: 0 0 0 10px darkorange;
 
 `box-shadow`支持逗号分隔语法，可以创建任意数量的投影。我们给上面的元素再加上一道实木色的“边框”。
 
-```
-width: 200px;
-height: 200px;
-background: darkgreen;
-box-shadow: 0 0 0 10px darkorange, 0 0 0 15px burlywood;
+```css {5}
+div {
+  width: 200px;
+  height: 200px;
+  background: darkgreen;
+  box-shadow: 0 0 0 10px darkorange, 0 0 0 15px burlywood;
+}
 ```
 
 <br />
@@ -43,12 +47,14 @@ box-shadow: 0 0 0 10px darkorange, 0 0 0 15px burlywood;
 
 `border` 配合 `outline` 也可以实现两个边框。将边框样式设置为虚线，外边框的颜色和元素的背景色保持一致，可以实现一个简单的缝线效果：
 
-```
-width: 200px;
-height: 200px;
-background: darkgreen;
-border: 3px dashed darkorange;
-outline: 10px solid darkgreen;
+```css {5,6}
+div {
+  width: 200px;
+  height: 200px;
+  background: darkgreen;
+  border: 3px dashed darkorange;
+  outline: 10px solid darkgreen;
+}
 ```
 
 <br/>

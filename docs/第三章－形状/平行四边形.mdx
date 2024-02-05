@@ -1,0 +1,54 @@
+---
+sidebar_position: 2
+---
+
+`skew()`函数可以让元素在水平或垂直方向倾斜，元素里面的内容也会发生相应的倾斜。
+
+```css {5}
+div {
+  text-align: center;
+  width: 200px;
+  height: 100px;
+  background: darkgreen;
+  transform: skewX(-45deg);
+}
+```
+
+<div
+  style={{
+    textAlign: "center",
+    width: 200,
+    height: 100,
+    background: "darkgreen",
+    marginLeft: 50,
+    transform: "skewX(-45deg)",
+  }}
+>
+  Click Me
+</div>
+
+为了不让内容倾斜，可以把元素的伪类作为背景。
+
+```css
+.button {
+  width: 200px;
+  height: 100px;
+  position: relative;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: darkgreen;
+  transform: skew(-45deg);
+}
+```
+
+import styles from "./styles.module.css";
+
+<div className={styles.button}>Click Me</div>
