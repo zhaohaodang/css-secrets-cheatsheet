@@ -1,0 +1,118 @@
+`linear-gradient` 如果设置了渐变角度 0deg，方向则是从下往上，可以想象为指向 0 点的时针。deg 如果是正数，则顺时针调整渐变角度，负数则是逆时针整渐变角度。
+
+## 一个切角
+
+```css
+div {
+  width: 200px;
+  height: 100px;
+  background: darkgreen;
+  background: linear-gradient(-45deg, transparent 15px, darkgreen 0);
+}
+```
+
+<div
+  style={{
+    width: 200,
+    height: 100,
+    background: "darkgreen",
+    background: "linear-gradient(-45deg, transparent 15px, darkgreen 0)",
+  }}
+></div>
+
+## 两个切角
+
+```css
+div {
+  width: 200px;
+  height: 100px;
+  background: darkgreen;
+  background: linear-gradient(-45deg, transparent 15px, darkgreen 0) right, linear-gradient(
+        45deg,
+        transparent 15px,
+        darkorange 0
+      ) left;
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+```
+
+<div
+  style={{
+    width:'200px',
+    height:'100px',
+    background:'linear-gradient(-45deg, transparent 15px, darkgreen 0) right, linear-gradient(45deg,transparent 15px,darkgreen 0) left',
+    backgroundSize:'50% 100%',
+    backgroundRepeat: 'no-repeat'
+}}
+
+> </div>
+
+## 四个切角
+
+```css
+div {
+  display: inline-block;
+  width: 400px;
+  height: 200px;
+  margin: 100px;
+  background: darkgreen;
+  background: linear-gradient(-45deg, transparent 15px, darkgreen 0) bottom right,
+    linear-gradient(45deg, transparent 15px, darkgreen 0) bottom left,
+    linear-gradient(-135deg, transparent 15px, darkgreen 0) top right, linear-gradient(
+        135deg,
+        transparent 15px,
+        darkgreen 0
+      ) top left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+```
+
+<div
+  style={{
+    display: "inline-block",
+    width: "200px",
+    height: "100px",
+    background:
+      "linear-gradient(-45deg, transparent 15px, darkgreen 0) bottom right, linear-gradient(45deg, transparent 15px, darkgreen 0) bottom left, linear-gradient(-135deg, transparent 15px, darkgreen 0) top right, linear-gradient(135deg, transparent 15px, darkgreen 0) top left",
+    backgroundSize: "50% 50%",
+    backgroundRepeat: "no-repeat",
+  }}
+></div>
+
+## 弧形切角
+
+```css
+div {
+  width: 200px;
+  height: 100px;
+  background: darkgreen;
+  background: radial-gradient(circle at top left, transparent 15px, darkgreen 0)
+      top left, radial-gradient(
+        circle at top right,
+        transparent 15px,
+        darkgreen 0
+      ) top right,
+    radial-gradient(circle at bottom left, transparent 15px, darkgreen 0) bottom
+      left, radial-gradient(
+        circle at bottom right,
+        transparent 15px,
+        darkgreen 0
+      ) bottom right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+```
+
+<div
+  style={{
+    width: "200px",
+    height: "100px",
+    background: "darkgreen",
+    background:
+      "radial-gradient(circle at top left, transparent 15px, darkgreen 0) top left,radial-gradient(circle at top right, transparent 15px, darkgreen 0) top right,radial-gradient(circle at bottom left, transparent 15px, darkgreen 0) bottom left,radial-gradient(circle at bottom right, transparent 15px, darkgreen 0) bottom right",
+    backgroundSize: "50% 50%",
+    backgroundRepeat: "no-repeat",
+  }}
+></div>
