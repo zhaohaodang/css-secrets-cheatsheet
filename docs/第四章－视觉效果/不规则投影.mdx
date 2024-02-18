@@ -1,0 +1,31 @@
+---
+sidebar_position: 2
+---
+
+利用滤镜`filter`属性中的`drop-shadow`函数，可以为伪类或透明背景，创造更加真实的投影。
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+  background: darkgreen;
+  filter: drop-shadow(4px 4px 4px darkorange);
+}
+div::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 0;
+  height: 0;
+  border: 8px solid;
+  transform: translateY(-4px);
+  border-color: transparent transparent transparent darkgreen;
+}
+```
+
+效果图：
+
+import styles from "./styles.module.css";
+
+<div className={styles["drop-shadow-demo"]}></div>

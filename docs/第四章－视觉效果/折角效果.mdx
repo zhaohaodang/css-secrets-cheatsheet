@@ -1,0 +1,53 @@
+---
+sidebar_position: 5
+---
+
+### 45 度折角
+
+先用一个渐变画出三角型折角，再用第二个渐变填充余下的背景。
+
+```css
+div {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to left bottom, transparent 50%, burlywood 0) no-repeat
+      100% 0/ 20px 20px, linear-gradient(-135deg, transparent 5%, darkorange 0);
+}
+```
+
+<div
+  style={{
+    width: 200,
+    height: 200,
+    background:
+      "linear-gradient(to left bottom, transparent 50%, burlywood 0) no-repeat 100% 0/ 20px 20px, linear-gradient(-135deg, transparent 5%, darkorange 0)",
+  }}
+></div>
+
+### 30 度折角
+
+调整第一个渐变的`background-size`，以及第二个渐变的角度和色标位置，可以画出一个 30 度的折角。
+
+```css
+div {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to left bottom, transparent 50%, burlywood 0) no-repeat
+      100% 0/ 30px 17px, linear-gradient(
+      -150deg,
+      transparent 15px,
+      darkorange 0
+    );
+}
+```
+
+<div
+  style={{
+    width: 200,
+    height: 200,
+    background:
+      "linear-gradient(to left bottom, transparent 50%, burlywood 0) no-repeat 100% 0/ 30px 17px, linear-gradient(-150deg, transparent 15px, darkorange 0)",
+  }}
+></div>
+
+### 更真实的折角

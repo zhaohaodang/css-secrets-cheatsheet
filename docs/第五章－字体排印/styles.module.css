@@ -1,0 +1,20 @@
+dt,
+dd {
+  display: inline;
+  margin: 0;
+}
+
+dd {
+  font-weight: 600;
+}
+
+dd + dt::before {
+  content: "\A";
+  white-space: pre;
+}
+
+dd + dd::before {
+  content: ", ";
+  font-weight: normal;
+  margin-left: -0.25em;
+}

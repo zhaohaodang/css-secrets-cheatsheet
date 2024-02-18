@@ -1,0 +1,48 @@
+---
+sidebar_position: 1
+---
+
+利用负数的扩张半径，抵消模糊半径，可以让某一侧不出现投影。
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+  background: darkgreen;
+  box-shadow: 0 5px 4px -4px darkorange;
+}
+```
+
+效果图：
+
+<div
+  style={{
+    width: 100,
+    height: 100,
+    background: "darkgreen",
+    boxShadow: "0 5px 4px -4px darkorange",
+  }}
+></div>
+
+
+上面的单侧投影可以使用多次，可以用于任意一边，用在相邻的两边则是邻边投影，用在对边则是双侧投影。
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+  background: darkgreen;
+  box-shadow: 0 5px 4px -4px darkorange, 0 -5px 4px -4px darkorange;
+}
+```
+
+效果图：
+
+<div
+  style={{
+    width: 100,
+    height: 100,
+    background: "darkgreen",
+    boxShadow: "0 5px 4px -4px darkorange, 0 -5px 4px -4px darkorange",
+  }}
+></div>

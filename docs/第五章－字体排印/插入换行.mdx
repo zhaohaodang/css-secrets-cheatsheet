@@ -1,0 +1,58 @@
+---
+sidebar_position: 2
+---
+
+使用`content: '\A'`的伪元素，可以让元素换行。
+
+```html
+<dl>
+  <dt>Name:</dt>
+  <dd>Lea Verou</dd>
+
+  <dt>Email:</dt>
+  <dd>lea@verou.me</dd>
+  <dd>leaverou@mit.edu</dd>
+
+  <dt>Location:</dt>
+  <dd>Earth</dd>
+</dl>
+```
+
+```css
+dt,
+dd {
+  display: inline;
+  margin: 0;
+}
+
+dd {
+  font-weight: 600;
+}
+
+dd + dt::before {
+  content: "\A";
+  white-space: pre;
+}
+
+dd + dd::before {
+  content: ", ";
+  font-weight: normal;
+  margin-left: -0.25em;
+}
+```
+
+import "./styles.module.css";
+
+<dl>
+  <dt>Name:</dt>
+  <dd>Lea Verou</dd>
+
+{" "}
+
+<dt>Email:</dt>
+<dd>lea@verou.me</dd>
+<dd>leaverou@mit.edu</dd>
+
+  <dt>Location:</dt>
+  <dd>Earth</dd>
+</dl>

@@ -1,98 +1,12 @@
-.button {
-  text-align: center;
-  width: 200px;
-  height: 100px;
-  margin-left: 50px;
-  position: relative;
-}
+---
+sidebar_position: 6
+---
 
-.button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background: darkgreen;
-  transform: skew(-45deg);
-}
+在一个左右部分为不同颜色的圆形上，画一个半圆，半圆围绕圆心旋转的时候，会显示出不同的比率饼图。
 
-.tab1 {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  text-align: center;
-}
-.tab1::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background: burlywood;
-  transform: perspective(0.5em) rotateX(5deg);
-}
+0~50% 比率的饼图：
 
-.tab2 {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  text-align: center;
-}
-.tab2::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background: burlywood;
-  transform-origin: bottom;
-  transform: perspective(0.5em) rotateX(5deg);
-}
-
-.tab3 {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  text-align: center;
-}
-.tab3::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background: burlywood;
-  transform-origin: bottom;
-  transform: scaleY(1.3) perspective(0.5em) rotateX(5deg);
-}
-
-.tab4 {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  text-align: center;
-}
-.tab4::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background: burlywood;
-  transform-origin: bottom left;
-  transform: scaleY(1.3) perspective(0.5em) rotateX(5deg);
-}
-
+```css
 .pie {
   width: 100px;
   height: 100px;
@@ -112,7 +26,17 @@
   transform-origin: left;
   transform: rotate(0.2turn);
 }
+```
 
+效果图：
+
+import styles from "./styles.module.css";
+
+<div className={styles.pie}></div>
+
+把半圆的背景换成另外一种颜色，即可实现 50%~100% 比率的饼图：
+
+```css
 .pie2 {
   width: 100px;
   height: 100px;
@@ -132,12 +56,16 @@
   transform-origin: left;
   transform: rotate(0.2turn);
 }
+```
 
-/**
- * Animated pie chart
- */
+效果图：
 
-.pie3 {
+<div className={styles.pie2}></div>
+
+将上面两个结合起来，可以实现一个动态的进度指示器，思路：如果整个动画持续时间是 6 秒，给半圆设置一个持续旋转的动画，在中间时间 3 秒的时候将半圆的背景色替换为另一种颜色。
+
+```css
+.pie {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -146,7 +74,7 @@
   color: #655;
 }
 
-.pie3::before {
+.pie::before {
   content: "";
   display: block;
   margin-left: 50%;
@@ -167,8 +95,19 @@
     background: currentColor;
   }
 }
+```
 
-.pie4 {
+效果图：
+
+<div className={styles.pie3}></div>
+
+如果我们为上面的动画设置一个负数的动画延时`animation-delay`，并且把动画播放状态 `animation-play-state` 设置为`paused`，动画将会停留在延时值绝对值所在的帧。
+
+饼图显示的比率=负的延时值的绝对值/总动画时间。
+
+在下面的示例中，设置了 -1.2s 的动画延时，占据总时长 6s 的 20%，即画出了一个 20% 比率的饼图：
+```css
+.pie {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -177,10 +116,12 @@
   color: #655;
 }
 
-.pie4::before {
+.pie::before {
   content: "";
-  display: block;
-  margin-left: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
   height: 100%;
   border-radius: 0 100% 100% 0 / 50%;
   background-color: inherit;
@@ -189,3 +130,20 @@
   animation-play-state: paused;
   animation-delay: -1.2s;
 }
+
+@keyframes spin {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+
+@keyframes bg {
+  50% {
+    background: currentColor;
+  }
+}
+```
+
+效果图：
+
+<div className={styles.pie4}></div>

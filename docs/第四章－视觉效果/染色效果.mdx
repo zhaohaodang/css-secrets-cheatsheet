@@ -1,0 +1,42 @@
+---
+sidebar_position: 3
+---
+
+利用混合模式，将上层的图片和下层的颜色进行混合。
+
+import IMG from "./img/demo.png";
+
+```html
+<div>
+  <img src="..." />
+</div>
+```
+
+```css {5}
+div {
+  backgroud: burlywood;
+}
+img {
+  mix-blend-mode: luminosity;
+}
+```
+
+原图片：
+
+![demo.png](./img/demo.png)
+
+混合颜色之后的效果：
+
+<div
+  style={{
+    fontSize: 0,
+    background: "burlywood",
+  }}
+>
+  <img
+    src={IMG}
+    style={{
+      mixBlendMode: "luminosity",
+    }}
+  />
+</div>

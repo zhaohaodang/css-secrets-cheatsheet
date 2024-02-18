@@ -1,0 +1,27 @@
+---
+sidebar_position: 3
+---
+
+使用条纹背景，配合 `background-origin: content-box`
+
+```html
+<pre><code>while (true) {
+	var d = new Date();
+	if (d.getDate()==1 &amp;&amp;
+	    d.getMonth()==3) {
+		alert("TROLOLOL");
+	}
+}</code></pre>
+```
+
+```css {5-7}
+pre {
+  padding: 0.5em;
+  line-height: 1.5;
+  background: hsl(20, 50%, 95%);
+  background-image: linear-gradient(rgba(120, 0, 0, 0.1) 50%, transparent 0);
+  background-size: auto 3em;
+  background-origin: content-box;
+  font-family: Consolas, Monaco, monospace;
+}
+```

@@ -1,0 +1,43 @@
+---
+sidebar_position: 4
+---
+
+```html
+
+```
+
+```css
+main {
+  width: 100%;
+  height: 500px;
+}
+main,
+article::before {
+  background: url("...") 0 / cover fixed;
+}
+article {
+  position: relative;
+  background: hsla(0, 0%, 100%, 0.3);
+  overflow: hidden;
+}
+article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(20px);
+  margin: -30px;
+}
+```
+
+import styles from "./styles.module.css";
+
+<main className={styles.wrapper}>
+  <article className={styles.inner}>
+    The only way to get rid of a temptation is to yield to it. Resist it, and
+    your soul grows sick with longing for the things it has forbidden to itself,
+    with desire for what its monstrous laws have made monstrous and unlawful
+  </article>
+</main>
