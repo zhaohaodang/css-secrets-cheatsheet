@@ -1,0 +1,83 @@
+---
+sidebar_position: 5
+---
+
+## 网格
+
+```css
+div {
+  width: 300px;
+  height: 300px;
+  background: darkgreen;
+  background-image: linear-gradient(white 1px, transparent 0), linear-gradient(90deg, white
+        1px, transparent 0);
+  background-size: 30px 30px;
+}
+```
+
+<div
+  style={{
+    width: 300,
+    height: 300,
+    background: "darkgreen",
+    backgroundImage:
+      "linear-gradient(white 1px, transparent 0), linear-gradient(90deg, white 1px, transparent 0)",
+    backgroundSize: "30px 30px",
+  }}
+></div>
+
+再加一层稍大一点的，线条更粗一点的 75\*75 的网格
+
+```css
+div {
+  width: 300px;
+  height: 300px;
+  background: darkgreen;
+  background-image: linear-gradient(white 2px, transparent 0), linear-gradient(
+      90deg,
+      white 2px,
+      transparent 0
+    ), linear-gradient(hsla(0, 0%, 100%, 0.3) 1px, transparent 0),
+    linear-gradient(90deg, hsla(0, 0%, 100%, 0.3) 1px, transparent 0);
+  background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+}
+```
+
+<div
+  style={{
+    width: 300,
+    height: 300,
+    background: "darkgreen",
+    backgroundImage:
+      "linear-gradient(white 2px, transparent 0),linear-gradient(90deg, white 2px, transparent 0),linear-gradient(hsla(0,0%,100%,.3) 1px,transparent 0),linear-gradient(90deg, hsla(0,0%,100%,.3) 1px,transparent 0)",
+    backgroundSize: "75px 75px, 75px 75px, 15px 15px, 15px 15px",
+  }}
+></div>
+
+## 波点
+
+```css
+div {
+  width: 300px;
+  height: 300px;
+  background: darkseagreen;
+  background-image: radial-gradient(darkorange 30%, transparent 0), radial-gradient(darkorange
+        30%, transparent 0);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+```
+
+<div
+  style={{
+    width: 300,
+    height: 300,
+    background: 'peru',
+    backgroundImage:
+      "radial-gradient(tan 30%, transparent 0), radial-gradient(tan 30%, transparent 0)",
+    backgroundSize: "30px 30px",
+    backgroundPosition: "0 0,15px 15px",
+  }}
+></div>
+
+## 棋盘
