@@ -1,0 +1,28 @@
+---
+sidebar_position: 6
+---
+
+将某一颜色作为底色，另三种颜色作为条纹，然后再让条纹以不同的间隔进行重复平铺。
+
+```css
+div {
+  height: 100px;
+  background: hsl(20, 40%, 90%);
+  background-image: linear-gradient(90deg, #fb3 11px, transparent 0),
+    linear-gradient(90deg, #ab4 23px, transparent 0), linear-gradient(90deg, #655
+        23px, transparent 0);
+  background-size: 83px 100%, 61px 100%, 41px 100%;
+}
+```
+
+<div
+  style={{
+    height: "100px",
+    background: "hsl(20, 40%, 90%)",
+    backgroundImage:
+      "linear-gradient(90deg, #fb3 11px, transparent 0),linear-gradient(90deg, #ab4 23px, transparent 0),linear-gradient(90deg, #655 23px, transparent 0)",
+    backgroundSize: "83px 100%, 61px 100%, 41px 100%",
+  }}
+></div>
+
+另外三种条纹的宽度都为质数，83，61，41，他们会在 41×61×83=207583 的位置，再次对齐，再次重复平铺。
