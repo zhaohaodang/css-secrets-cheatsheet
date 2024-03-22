@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-`box-shadow`属性可以制造投影，一个正值的扩张半径（第四个参数），加上两个为零的偏移量（第一和第二个参数）以及为零的模糊值（第三个参数），得到的“投影”其实就像一道实线边框。
+[box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)属性可以制造投影，一个正值的扩张半径（第四个参数），加上两个为零的偏移量（第一和第二个参数）以及为零的模糊值（第三个参数），得到的“投影”其实就像一道实线边框。
 
 ```css {5}
 div {
@@ -12,7 +12,9 @@ div {
   box-shadow: 0 0 0 10px darkorange;
 }
 ```
+
 效果图：
+
 <div
   style={{
     width: 200,
@@ -22,6 +24,7 @@ div {
   }}
 ></div>
 
+<br />
 `box-shadow`支持逗号分隔语法，可以创建任意数量的投影。我们给上面的元素再加上一道实木色的“边框”。
 
 ```css {5}
@@ -32,7 +35,9 @@ div {
   box-shadow: 0 0 0 10px darkorange, 0 0 0 15px burlywood;
 }
 ```
+
 效果图：
+
 <div
   style={{
     width: 200,
@@ -41,6 +46,8 @@ div {
     boxShadow: "0 0 0 10px darkorange, 0 0 0 15px burlywood",
   }}
 ></div>
+
+<br />
 
 后加的阴影会被前面的盖住，所以在视觉上，实木色只有 5px 的宽。
 如果把实木色投影的扩张半径改为 10px（和第一个深橘色的阴影宽度一样），实木色投影将被深橘色盖住，不会显示出来。
@@ -56,7 +63,9 @@ div {
   outline: 10px solid darkgreen;
 }
 ```
+
 效果图：
+
 <div style={{
     width:'200px',
 height:'200px',

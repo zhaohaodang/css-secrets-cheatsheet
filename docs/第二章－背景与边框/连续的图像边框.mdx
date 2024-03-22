@@ -2,12 +2,69 @@
 sidebar_position: 6
 ---
 
+前几节我们有提到，背景图案默认是一直延续到边框的外沿的，如果把边框设置为透明色，背景图就会露出来。
+
+但是有个“小问题”，背景图片不是从元素的左上角开始放置的，而是被放在了内边距的左上角，即`background-origin: padding-box`。
+
+import img from "./img/img2.jpeg";
+
+```css
+div {
+  border: 16px solid transparent;
+  background: url(https://i.imgur.com/XmCJBvU.jpeg);
+  width: 200px;
+  height: 200px;
+  padding: 16px;
+  overflow: hidden;
+}
+```
+
+<div style={{
+    border:'16px solid transparent',
+background:`url(${img})`,
+width:'300px',
+height:'300px',
+padding:'16px',
+overflow:'hidden',
+
+}}>
+
+</div>
+
+上面和左面的边框区域显示的背景有点怪异，其实是原图片以平铺的方式蔓延到的。为了让背景图案从元素的左上角开始放置，要设置`background-origin: border-box`。
+
+```css {4}
+div {
+  border: 16px solid transparent;
+  background: url(https://i.imgur.com/XmCJBvU.jpeg);
+  background-origin: border-box;
+  width: 200px;
+  height: 200px;
+  padding: 16px;
+  overflow: hidden;
+}
+```
+
+<div style={{
+    border:'16px solid transparent',
+background:`url(${img})`,
+backgroundOrigin: 'border-box',
+width:'300px',
+height:'300px',
+padding:'16px',
+overflow:'hidden',
+
+}}>
+
+</div>
+
+在此基础上面，我们在`padding-box`区域画出白色的背景，把背景图片盖住，这样就做出了连续的、以图像为边框的效果。
+
 ```css
 div {
   border: 16px solid transparent;
   background: linear-gradient(white, white) padding-box, url(https://i.imgur.com/XmCJBvU.jpeg)
       border-box 0 / cover;
-  background-origin: border-box;
   width: 300px;
   height: 300px;
   padding: 16px;
@@ -15,12 +72,9 @@ div {
 }
 ```
 
-import img from "./img/img2.jpeg";
-
 <div style={{
     border:'16px solid transparent',
 background:`linear-gradient(white, white) padding-box, url(${img}) border-box 0 / cover`,
-backgroundOrigin:'border-box',
 width:'300px',
 height:'300px',
 padding:'16px',
@@ -28,4 +82,5 @@ overflow:'hidden',
 
 }}>
 hello
+
 </div>

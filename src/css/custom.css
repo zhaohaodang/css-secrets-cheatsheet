@@ -29,6 +29,9 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-article p {
-  margin-top: var(--ifm-leading);
+article * {
+  box-sizing: content-box;
 }
+/* article p {
+  margin-top: var(--ifm-leading);
+} */
