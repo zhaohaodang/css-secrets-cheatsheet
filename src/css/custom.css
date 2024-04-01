@@ -32,6 +32,9 @@
 article * {
   box-sizing: content-box;
 }
+article article {
+  box-sizing: border-box;
+}
 /* article p {
   margin-top: var(--ifm-leading);
 } */

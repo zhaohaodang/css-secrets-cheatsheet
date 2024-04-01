@@ -1,0 +1,76 @@
+---
+sidebar_position: 5
+---
+
+利用 background-image，可以为文字添加一条宽 100%，高 1px 的背景图案。如果图案的位置恰好在文字下方，就可以产生下划线的效果。
+
+```css
+p a {
+  background: linear-gradient(90deg, gray, gray);
+  background-size: 100% 1px;
+  background-position: 0 1em;
+}
+```
+
+{/* prettier-ignore */}
+<p>
+  <a
+    style={{
+      background: "linear-gradient(90deg, gray, gray) no-repeat",
+      backgroundSize: "100% 1px",
+      backgroundPosition: "0 1em",
+    }}
+  >Luck is not chance, it's toil; fortune's expensive smile is earned.</a>
+</p>
+
+还可以更美观一些，上面效果图里的下划线，会穿过某些字母(比如 p 和 y)的降部，我们可以让下划线自动绕开这些字母。
+
+为达到这个效果，我们可以为文字添加一个文字阴影 [text-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow)，阴影颜色和网页的背景色一致。
+
+```css {5}
+p a {
+  background: linear-gradient(90deg, gray, gray);
+  background-size: 0.2em 2px;
+  background-position: 0 1em;
+  text-shadow: 0.05em 0 white, -0.05em 0 white;
+}
+```
+
+{/* prettier-ignore */}
+<p>
+  <a
+    style={{
+      background: "linear-gradient(90deg, gray, gray) no-repeat",
+      backgroundSize: '.2em 2px',
+      backgroundPosition: "0 1em",
+      textShadow: "0.05em 0 white,-0.05em 0 white",
+    }}
+  >Luck is not chance, it's toil; fortune's expensive smile is earned.</a>
+</p>
+
+要想画出一条 1px 的线，很简单的，感觉没必要使用`linear-gradient`。
+
+但是，使用渐变不仅可以画出一条实线，也可以画出一条虚线，把上面代码里的渐变稍加改一下，就可以在文字下方画出一条虚线，更加好看了！
+
+```css {2}
+p a {
+  background: linear-gradient(90deg, gray 66%, transparent 0) repeat-x;
+  background-size: 0.2em 2px;
+  background-position: 0 1em;
+  text-shadow: 0.05em 0 white, -0.05em 0 white;
+}
+```
+
+{/* prettier-ignore */}
+<p>
+  <a
+    style={{
+      background: "linear-gradient(90deg, gray 66%, transparent 0) repeat-x",
+      backgroundSize: "0.4em 2px",
+      backgroundPosition: "0 1em",
+      textShadow: "0.05em 0 white,-0.05em 0 white",
+    }}
+  >Luck is not chance, it's toil; fortune's expensive smile is earned.</a>
+</p>
+
+把上面的 66%调整成其他百分比，可以调节虚线的虚实比例，还可以通过 background-size 来改变虚线的疏密。
