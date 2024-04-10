@@ -1,0 +1,57 @@
+label 元素与复选框息息相关，当 label 和某个复选框关联在一起时，label 身上也可以触发开关。和复选框不同的是，label 元素的样式是可以随便修改的哦。
+
+{/* prettier-ignore */}
+```html
+<input type="checkbox" id="awesome" />
+<label for="awesome">Awesome!</label>
+```
+
+我们先修改 label 元素的外观，模拟复选框的样子：
+
+```css
+input[type="checkbox"] + label::before {
+  content: "\a0"; /* 不换行空格 */
+  display: inline-block;
+  vertical-align: 0.2em;
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.2em;
+  border-radius: 0.2em;
+  background: silver;
+  text-indent: 0.15em;
+  line-height: 0.65;
+}
+```
+
+当复选框选中时，会触发 checked 的状态，针对 checked 状态可以修改相关联的 label 元素：
+
+```css
+input[type="checkbox"]:checked + label::before {
+  content: "\2713";
+  background: yellowgreen;
+}
+```
+
+效果图：
+
+<input type="checkbox" id="awesome1" />
+<label htmlFor="awesome1">Awesome!</label>
+
+import "./styles.module.css";
+
+我们也可以加上复选框禁用状态：
+
+```css
+input[type="checkbox"]:disabled + label::before {
+  background: gray;
+  box-shadow: none;
+  color: #555;
+  cursor: not-allowed;
+}
+```
+
+<input type="checkbox" id="awesome2" disabled />
+<label htmlFor="awesome2">Awesome!</label>
+<br />
+<input type="checkbox" id="awesome3" disabled checked />
+<label htmlFor="awesome3">Awesome!</label>

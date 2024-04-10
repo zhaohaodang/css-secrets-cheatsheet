@@ -68,6 +68,12 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
+      metadata: [
+        {
+          name: "keywords",
+          content: "CSS魔法,CSS揭秘,css-magic, css-secrets",
+        },
+      ],
       navbar: {
         title: "《CSS揭秘》备忘录",
         logo: {
