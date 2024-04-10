@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcss_secrets_cheatsheet=self.webpackChunkcss_secrets_cheatsheet||[]).push([[7393],{1838:e=>{e.exports=JSON.parse('{"blogBasePath":"/css-secrets-cheatsheet/blog","blogTitle":"Blog"}')}}]);
