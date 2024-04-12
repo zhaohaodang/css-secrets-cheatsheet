@@ -2,7 +2,7 @@
 sidebar_label: 概述
 sidebar_position: 1
 slug: /
-title: 《CSS揭秘》备忘录
+title: 主页
 description: 《CSS揭秘》备忘录
 keywords: [CSS魔法, CSS揭秘, css-magic, css-secrets]
 ---

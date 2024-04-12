@@ -1,0 +1,61 @@
+元素的宽度通常是和父元素相关，但有的时候我们希望元素的宽度能跟内部元素关联起来。
+
+看下面这个例子
+
+```html
+<p>Some text [...]</p>
+<figure>
+  <img
+    src="https://images.wosaimg.com/78/9c7c722c8276835f63fc5d9937649862f45a0f.png"
+  />
+  <figcaption>
+    The great Sir Adam Catlace was named after Countess Ada Lovelace, the first
+    programmer.
+  </figcaption>
+</figure>
+<p>More text [...].</p>
+```
+
+效果图：
+
+<p>Some text [...]</p>
+<figure>
+  <img src="https://images.wosaimg.com/78/9c7c722c8276835f63fc5d9937649862f45a0f.png" />
+  <figcaption>
+    The great Sir Adam Catlace was named after Countess Ada Lovelace, the first
+    programmer.
+  </figcaption>
+</figure>
+<p>More text [...].</p>
+
+figcaption 元素内的文案一直延伸，超出了图片的宽度。文案和图片应该是一体的，两者保持一致会更美观。
+
+图片的尺寸往往是不固定的，不同的图片往往有不同的尺寸。如果 figure 元素的宽度，能自适应地变为内部图片的宽度，那么文案也会自动地限制在图片的宽度内。
+
+[min-content](https://developer.mozilla.org/en-US/docs/Web/CSS/min-content) 属性可以帮助我们做到这一点，这个关键字将解析为这个容器内部最大的不可断行元素的宽度(即最宽的单词、图片或具有固定宽度的盒元素)。
+
+在上面的例子中，文案是可断行的，所以 min-content 不会被解析为文案的宽度，会被解析为图片的宽度，这正是我们想要的！
+
+```css
+figure {
+  width: min-content;
+}
+```
+
+效果图：
+
+<p>Some text [...]</p>
+<figure
+  style={{
+    width: "min-content",
+  }}
+>
+  <img src="https://images.wosaimg.com/78/9c7c722c8276835f63fc5d9937649862f45a0f.png" />
+  <figcaption>
+    The great Sir Adam Catlace was named after Countess Ada Lovelace, the first
+    programmer.
+  </figcaption>
+</figure>
+<p>More text [...].</p>
+
+figure 元素的宽度现在等于内部图片的宽度了。

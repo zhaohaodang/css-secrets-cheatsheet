@@ -38,3 +38,7 @@ article article {
 /* article p {
   margin-top: var(--ifm-leading);
 } */
+
+article img {
+  max-width: none;
+}
